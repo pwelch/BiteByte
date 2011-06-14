@@ -5,6 +5,7 @@
     <string name="app_name">Bite-Byte</string>
     <string name="main_title">Main Menu</string>
   
+  	<string name="go_label">Go</string>
     <string name="about_label">About</string>
     <string name="exit_label">Exit</string>
     

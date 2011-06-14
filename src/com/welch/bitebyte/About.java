@@ -3,6 +3,7 @@ package com.welch.bitebyte;
 import android.app.Activity;
 import android.os.Bundle;
 
+/** About Activity to display the About this Program information */
 public class About extends Activity {
 	/* The main for every activity. */
 	@Override
