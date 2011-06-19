@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 
+/** Main class and first Activity class **/
 public class BiteByte extends Activity implements View.OnClickListener {
     /** Called when the activity is first created. */
     @Override
@@ -12,17 +13,16 @@ public class BiteByte extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        
-        // Listeners for all buttons
+        /** Listeners for all buttons **/
         View goButton = findViewById(R.id.go_button);
         goButton.setOnClickListener(this);
         View aboutButton = findViewById(R.id.about_button);
         aboutButton.setOnClickListener(this);
         View exitButton = findViewById(R.id.exit_button);
         exitButton.setOnClickListener(this);       
-        }
+        } // end Main method
     
-    // OnClickListener method for button selection
+    /** OnClickListener method for button selection **/
     public void onClick(View v) {
     	switch (v.getId()) {
     	case R.id.go_button:
@@ -37,6 +37,5 @@ public class BiteByte extends Activity implements View.OnClickListener {
     		finish();
     		break;
     	}   	
-    	
-  	}
-}
+  	} // end onClick method
+} // end Main BiteByte.java class/activity

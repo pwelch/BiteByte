@@ -14,6 +14,5 @@ public class About extends Activity {
 		/* This activity is called for the about message.
 		 * See strings.xml for About text. 
 		 */
-	}
-
-}
+	} // end main method for About Activity
+} // end About.java Activity
