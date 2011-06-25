@@ -82,7 +82,7 @@ public class Browser extends Activity implements LocationListener {
 	    // return mostRecentLocation.getLongitude();
 	   }
 	   public int getRadius(){
-		   int radius = 0;
+		   int radius = 500;
 		   return radius;
 	   }
 	   public String getType(){
