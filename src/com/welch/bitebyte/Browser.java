@@ -43,15 +43,17 @@ public class Browser extends Activity implements LocationListener {
  	  webView = (WebView) findViewById(R.id.web_view);		// Create webview and assign to web_view item
  	  webView.getSettings().setJavaScriptEnabled(true);		// JavaScript is off by default, enabling JavaScript
  	  webView.setWebViewClient(new WebViewClient());		// Create and set WebViewClient subclass for rendering
- 	  webView.loadUrl(getURL());							// Load bite.html page with webView
  	  
  	  // Add Java to JavaScript Interface and call it 'android' for access.
  	  webView.addJavascriptInterface(new JavaScriptInterface(), "android");
+ 	  
+ 	// Load bite.html page with webView
+ 	  webView.loadUrl(getURL());							
    } // end Browser method
       
    // Method to set/return URL for map page source
    private String getURL() {
-      final String url = "http://my.fit.edu/~pwelch2010/bite.html";
+      final String url = "http://my.fit.edu/~pwelch2010/bite20110625.html";
 	  return url;
 	} // end getURL method
 
@@ -67,13 +69,25 @@ public class Browser extends Activity implements LocationListener {
 	    mostRecentLocation = locationManager.getLastKnownLocation(provider);
    } // end getLocation method
    
-   /** Get the current Latitude and Longitude **/
+   /** JavaScriptInterface variables **/
    private class JavaScriptInterface {
 	   public double getLatitude(){
-	     return mostRecentLocation.getLatitude();
+		   double test = 29.62170;
+	     return test;
+	     // return mostRecentLocation.getLatitude();
 	   }
 	   public double getLongitude(){
-	     return mostRecentLocation.getLongitude();
+		   double test1 = -82.370915;
+	     return test1;
+	    // return mostRecentLocation.getLongitude();
+	   }
+	   public int getRadius(){
+		   int radius = 0;
+		   return radius;
+	   }
+	   public String getType(){
+		   String type = "restaurant";
+		   return type;
 	   }
 	 } // end JavaScriptInterface method
    
