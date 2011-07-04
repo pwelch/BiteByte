@@ -4,8 +4,9 @@
 <resources>
     <string name="app_name">Bite-Byte</string>
     <string name="main_title">Main Menu</string>
-  
-  	<string name="go_label">Go</string>
+    <string name="tip_title">Tip Calculator</string>
+  	<string name="go_label">Find Restaurant</string>
+  	<string name="tip_label">Tip Calculator</string>
     <string name="about_label">About</string>
     <string name="exit_label">Exit</string>
     
@@ -20,4 +21,7 @@
     
     pwelch2010@my.fit.edu
     </string>
+    <string name="tip_text">Tip Percent:</string>
+    <string name="amount_text">Tip Amount:</string>
+    <string name="bill_hint">Enter Bill Amount</string>
 </resources>

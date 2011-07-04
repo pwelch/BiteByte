@@ -15,7 +15,12 @@
     	android:id="@+id/go_button"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:text="@string/go_label"/> 
+    	android:text="@string/go_label"/>
+   <Button
+    	android:id="@+id/tip_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/tip_label"/> 
    <Button
     	android:id="@+id/about_button"
     	android:layout_width="fill_parent"

@@ -19,10 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+         <activity android:name=".Tip"
+              android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.Tip" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+          </activity>
         <activity android:name=".Browser"
               android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.Browser" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -30,7 +37,7 @@
                   android:label="@string/about_title"
                   android:theme="@android:style/Theme.Dialog">
         <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.About" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

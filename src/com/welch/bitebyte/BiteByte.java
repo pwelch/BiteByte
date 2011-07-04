@@ -16,6 +16,8 @@ public class BiteByte extends Activity implements View.OnClickListener {
         /** Listeners for all buttons **/
         View goButton = findViewById(R.id.go_button);
         goButton.setOnClickListener(this);
+        View tipButton = findViewById(R.id.tip_button);
+        tipButton.setOnClickListener(this);
         View aboutButton = findViewById(R.id.about_button);
         aboutButton.setOnClickListener(this);
         View exitButton = findViewById(R.id.exit_button);
@@ -28,6 +30,10 @@ public class BiteByte extends Activity implements View.OnClickListener {
     	case R.id.go_button:
     		Intent a = new Intent(this, Browser.class);
     		startActivity(a);
+    		break;
+    	case R.id.tip_button:
+    		Intent t = new Intent(this, Tip.class);
+    		startActivity(t);
     		break;
     	case R.id.about_button:
     		Intent i = new Intent(this, About.class);
