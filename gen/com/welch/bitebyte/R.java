@@ -19,7 +19,7 @@ public final class R {
     public static final class id {
         public static final int about_button=0x7f060004;
         public static final int about_content=0x7f060000;
-        public static final int amountAnswer_text=0x7f060007;
+        public static final int answerAmount_text=0x7f060007;
         public static final int bill_text=0x7f060008;
         public static final int exit_button=0x7f060005;
         public static final int go_button=0x7f060002;

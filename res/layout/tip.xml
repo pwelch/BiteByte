@@ -1,3 +1,4 @@
+<!-- Define the layout for the Tip Calculator Activity -->
 <ScrollView
    xmlns:android="http://schemas.android.com/apk/res/android"
    android:layout_width="fill_parent"
@@ -14,29 +15,34 @@
     	android:text="@string/tip_title"/>
       <TableRow>
          <TextView android:text="@string/tip_text" />
-         <Spinner android:id="@+id/tip_rate" />
       </TableRow>
+         <Spinner android:id="@+id/tip_rate" 
+        android:layout_width="wrap_content" 
+    	android:layout_height="wrap_content"
+    	android:gravity="center" 
+    	android:text="@string/tip_title"/>
       <TableRow>
          <TextView android:text="@string/amount_text" />
       </TableRow>
       <TextView
-         android:id="@+id/amountAnswer_text"
+         android:id="@+id/answerAmount_text"
+         android:gravity="center"
          android:padding="10dip"
          android:textSize="18sp" />
       <EditText 
-      	 	android:layout_width="wrap_content"
-			android:id="@+id/bill_text" 
-			android:layout_height="wrap_content" 
-			android:text="Enter Bill Amount" 
-			android:textSize="18sp" 
-			android:hint="@string/bill_hint" 
-			android:padding="10dip"
-			android:numeric="integer|decimal">
+      	 android:layout_width="wrap_content"
+		 android:id="@+id/bill_text" 
+		 android:layout_height="wrap_content" 
+		 android:textSize="18sp" 
+		 android:hint="@string/bill_hint" 
+		 android:padding="10dip"
+		 android:numeric="integer|decimal">
 	  </EditText>
       <Button 
-      		android:text="Calculate Tip" 
-      		android:id="@+id/tipCalculate" 
-      		android:layout_width="wrap_content" 
-      		android:layout_height="wrap_content"></Button>
+      	 android:text="Calculate Tip" 
+      	 android:id="@+id/tipCalculate" 
+      	 android:layout_width="wrap_content" 
+      	 android:layout_height="wrap_content">
+      </Button>
    </TableLayout>
 </ScrollView>

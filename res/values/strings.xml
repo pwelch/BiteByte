@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- This file defines the string variables for objects. -->
+<!-- Define the string variables for objects. -->
 <resources>
     <string name="app_name">Bite-Byte</string>
     <string name="main_title">Main Menu</string>
@@ -9,16 +9,13 @@
   	<string name="tip_label">Tip Calculator</string>
     <string name="about_label">About</string>
     <string name="exit_label">Exit</string>
-    
     <string name="about_title">About Bite-Byte</string>
-    <string name="about_text">\
+    <string name="about_text">
     Bite-Byte is an application that finds restaurants based
     on the current location of the user which is obtained by using
     the geocooridantes privded by the mobile GPS.
-    
     This program was written by Paul Welch to meet the requirements
     of CIS5080.
-    
     pwelch2010@my.fit.edu
     </string>
     <string name="tip_text">Tip Percent:</string>

@@ -42,6 +42,6 @@ public class BiteByte extends Activity implements View.OnClickListener {
     	case R.id.exit_button:
     		finish();
     		break;
-    	}   	
+    	} // end switch  	
   	} // end onClick method
 } // end Main BiteByte.java class/activity

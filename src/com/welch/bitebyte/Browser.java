@@ -14,7 +14,8 @@ import android.webkit.WebViewClient;
 public class Browser extends Activity implements LocationListener {
 	private WebView webView; 				// Create WebView object
 	private Location mostRecentLocation;	// Create Location object
-	private LocationManager locationManager; 
+	private LocationManager locationManager;
+	
    /** Called when the activity is first created. */
    @Override
    public void onCreate(Bundle savedInstanceState) {
@@ -61,9 +62,9 @@ public class Browser extends Activity implements LocationListener {
     *  To save battery on the device the location update time has been increased. **/
    private void getLocation() {
 	     locationManager =
-	      (LocationManager)getSystemService(Context.LOCATION_SERVICE);	// Android GPS Manager
-	    Criteria criteria = new Criteria();								// Application criteria for selection location provider
-	    criteria.setAccuracy(Criteria.ACCURACY_FINE);					// Set the accuracy requirement
+	      (LocationManager)getSystemService(Context.LOCATION_SERVICE);		// Android GPS Manager
+	    Criteria criteria = new Criteria();									// Application criteria for selection location provider
+	    criteria.setAccuracy(Criteria.ACCURACY_FINE);						// Set the accuracy requirement
 	    String provider = locationManager.getBestProvider(criteria,true); 	// Get location data from best source
 	    locationManager.requestLocationUpdates(provider, 15000, 1, this); 	// Get updates of current location
 	    mostRecentLocation = locationManager.getLastKnownLocation(provider);
@@ -106,6 +107,5 @@ public class Browser extends Activity implements LocationListener {
    public void onLocationChanged(Location location) {
 	   mostRecentLocation = location;
    }
-   /** End required methods when using LocationListener **/
-   
+   /** End required methods when using LocationListener **/   
 } // End Browser.class Activity

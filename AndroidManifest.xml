@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Declare all activities and permissions. -->
+<!-- Declare all activities and permissions for application. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.welch.bitebyte"
       android:versionCode="1"
