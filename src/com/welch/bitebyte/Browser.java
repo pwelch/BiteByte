@@ -54,7 +54,7 @@ public class Browser extends Activity implements LocationListener {
       
    // Method to set/return URL for map page source
    private String getURL() {
-      final String url = "http://my.fit.edu/~pwelch2010/bite20110625.html";
+      final String url = "http://my.fit.edu/~pwelch2010/bite.html";
 	  return url;
 	} // end getURL method
 
