@@ -43,52 +43,20 @@ public class Tip extends Activity implements View.OnClickListener, OnItemSelecte
 		View tipCalculate = findViewById(R.id.tipCalculate);
 	 	tipCalculate.setOnClickListener(this);
 	} // end findViews method
-
-	/** Calculate Tip and set textView with the answer.  **/
+   
+	/** Calculate Tip **/
 	private void calculateTip() {
-		double total = 0;
-		double answer = 0;
-		double price = Double.parseDouble(billAmount.getText().toString());
-		switch(getPercent(percentSpinner)){
-		case 0:
-			answer = roundAnswer((price * .10));
-			answerAmount.setText(Double.toString(answer));
-			total = price + answer;
-			totalAmount.setText(Double.toString(total));
-		break;
-		case 1:
-			answer = roundAnswer((price * .15));
-			answerAmount.setText(Double.toString(answer));
-			total = price + answer;
-			totalAmount.setText(Double.toString(total));
-		break;
-		case 2:
-			answer = roundAnswer((price * .20));
-			answerAmount.setText(Double.toString(answer));
-			total = price + answer;
-			totalAmount.setText(Double.toString(total));
-		break;
-		case 3:
-			answer = roundAnswer((price * .25));
-			answerAmount.setText(Double.toString(answer));
-			total = price + answer;
-			totalAmount.setText(Double.toString(total));
-		break;
-		case 4:
-			answer = roundAnswer((price * .30));
-			answerAmount.setText(Double.toString(answer));
-			total = price + answer;
-			totalAmount.setText(Double.toString(total));
-		break;
-		} //end switch
-	} // end calculateTip method
-	
-	/** Get the selected percent from the spinner **/
-	private int getPercent(Spinner spinner){
-		int index = spinner.getSelectedItemPosition();
-		return index;
-	} // end getPercent method
-	
+	   double total = 0;
+	   double answer = 0;
+	   double price = Double.parseDouble(billAmount.getText().toString());						// Get price from billAmount
+	   double percentage  =  Double.parseDouble(percentSpinner.getSelectedItem().toString());	// Get percent from percentSpinner
+	   percentage = (percentage / 100 );														// Get the percent value
+	   answer = roundAnswer((price * percentage));												// Calculate tip
+	   answerAmount.setText(Double.toString(answer));											// Set answer textView
+	   total = price + answer;																	// Calculate total
+	   totalAmount.setText(Double.toString(total));												// Set total textView
+   } // end calculateTip method
+		
 	/** Round double answer to 2 places **/
 	public double roundAnswer(double d) {
 	    return Math.round(d * Math.pow(10, (double) 2)) / Math.pow(10,
