@@ -15,6 +15,7 @@ public class Tip extends Activity implements View.OnClickListener, OnItemSelecte
 	/** Set class variables **/
 	private Spinner percentSpinner;
 	private TextView answerAmount;
+	private TextView totalAmount;
 	private EditText billAmount;
 
 	/* The main for every activity. */
@@ -36,36 +37,48 @@ public class Tip extends Activity implements View.OnClickListener, OnItemSelecte
 		percentSpinner = (Spinner) findViewById(R.id.tip_rate);
 		percentSpinner.setOnItemSelectedListener(this);
 		answerAmount = (TextView) findViewById(R.id.answerAmount_text);
+		totalAmount = (TextView) findViewById(R.id.totalAmount_text);
 		billAmount = (EditText) findViewById(R.id.bill_text);
 		billAmount.requestFocus();
 		View tipCalculate = findViewById(R.id.tipCalculate);
 	 	tipCalculate.setOnClickListener(this);
 	} // end findViews method
 
-	/** Calculate Tip and set textView with the answer **/
+	/** Calculate Tip and set textView with the answer.  **/
 	private void calculateTip() {
+		double total = 0;
 		double answer = 0;
 		double price = Double.parseDouble(billAmount.getText().toString());
 		switch(getPercent(percentSpinner)){
 		case 0:
 			answer = roundAnswer((price * .10));
 			answerAmount.setText(Double.toString(answer));
+			total = price + answer;
+			totalAmount.setText(Double.toString(total));
 		break;
 		case 1:
 			answer = roundAnswer((price * .15));
 			answerAmount.setText(Double.toString(answer));
+			total = price + answer;
+			totalAmount.setText(Double.toString(total));
 		break;
 		case 2:
 			answer = roundAnswer((price * .20));
 			answerAmount.setText(Double.toString(answer));
+			total = price + answer;
+			totalAmount.setText(Double.toString(total));
 		break;
 		case 3:
 			answer = roundAnswer((price * .25));
 			answerAmount.setText(Double.toString(answer));
+			total = price + answer;
+			totalAmount.setText(Double.toString(total));
 		break;
 		case 4:
 			answer = roundAnswer((price * .30));
 			answerAmount.setText(Double.toString(answer));
+			total = price + answer;
+			totalAmount.setText(Double.toString(total));
 		break;
 		} //end switch
 	} // end calculateTip method
@@ -82,7 +95,7 @@ public class Tip extends Activity implements View.OnClickListener, OnItemSelecte
 	            (double) 2);
 	} // end roundAnswer method
 	
-	/** Spinner Listeners **/
+	/** Spinner Listeners. Reference from Android API**/
 	public void onItemSelected(AdapterView<?> parent, View v, int position, long id){
 		parent.getItemAtPosition(position);
 	}
@@ -90,7 +103,7 @@ public class Tip extends Activity implements View.OnClickListener, OnItemSelecte
 		// Do Nothing.
 	}
 	
-	/** Sets the spinner and data for the spinner */
+	/** Sets the spinner and data for the spinner. Referenced from Android API */
 	private void setAdapters() {
 	    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.percents, android.R.layout.simple_spinner_item);
 	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

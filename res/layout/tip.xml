@@ -29,6 +29,14 @@
          android:gravity="center"
          android:padding="10dip"
          android:textSize="18sp" />
+       <TableRow>
+         <TextView android:text="@string/total_text" />
+      </TableRow>
+      <TextView
+         android:id="@+id/totalAmount_text"
+         android:gravity="center"
+         android:padding="10dip"
+         android:textSize="18sp" />
       <EditText 
       	 android:layout_width="wrap_content"
 		 android:id="@+id/bill_text" 

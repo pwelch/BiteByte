@@ -20,5 +20,6 @@
     </string>
     <string name="tip_text">Tip Percent:</string>
     <string name="amount_text">Tip Amount:</string>
+    <string name="total_text">Total Amount:</string>
     <string name="bill_hint">Enter Bill Amount</string>
 </resources>

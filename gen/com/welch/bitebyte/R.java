@@ -20,12 +20,13 @@ public final class R {
         public static final int about_button=0x7f060004;
         public static final int about_content=0x7f060000;
         public static final int answerAmount_text=0x7f060007;
-        public static final int bill_text=0x7f060008;
+        public static final int bill_text=0x7f060009;
         public static final int exit_button=0x7f060005;
         public static final int go_button=0x7f060002;
-        public static final int tipCalculate=0x7f060009;
+        public static final int tipCalculate=0x7f06000a;
         public static final int tip_button=0x7f060003;
         public static final int tip_rate=0x7f060006;
+        public static final int totalAmount_text=0x7f060008;
         public static final int web_view=0x7f060001;
     }
     public static final class layout {
@@ -40,12 +41,13 @@ public final class R {
         public static final int about_title=0x7f050007;
         public static final int amount_text=0x7f05000a;
         public static final int app_name=0x7f050000;
-        public static final int bill_hint=0x7f05000b;
+        public static final int bill_hint=0x7f05000c;
         public static final int exit_label=0x7f050006;
         public static final int go_label=0x7f050003;
         public static final int main_title=0x7f050001;
         public static final int tip_label=0x7f050004;
         public static final int tip_text=0x7f050009;
         public static final int tip_title=0x7f050002;
+        public static final int total_text=0x7f05000b;
     }
 }

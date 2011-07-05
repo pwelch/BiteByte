@@ -12,9 +12,9 @@ import android.webkit.WebViewClient;
 
 /** WebView Activity to display Places/Map */
 public class Browser extends Activity implements LocationListener {
-	private WebView webView; 				// Create WebView object
-	private Location mostRecentLocation;	// Create Location object
-	private LocationManager locationManager;
+	private WebView webView; 					// Create WebView object
+	private Location mostRecentLocation;		// Create Location object
+	private LocationManager locationManager;	// Create LocationManager object
 	
    /** Called when the activity is first created. */
    @Override
