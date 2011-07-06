@@ -1,5 +1,13 @@
 package com.welch.bitebyte;
 
+/**
+ * Program: Browser.java
+ * @author: Paul Welch
+ * Purpose: This activity uses a webView and JavaScript Interface
+ * to search for restaurants in an area within a 500m radius of GPS coordinates.
+ * The GPS coordinates are passed to the Google API via a Java/JavaScript Interface.
+ */
+
 import android.app.Activity;
 import android.content.Context;
 import android.location.Criteria;
@@ -21,7 +29,7 @@ public class Browser extends Activity implements LocationListener {
    public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.browser);
-      getLocation();	// Get the current location
+      getLocation();	// Get the current geocoordinates
       openBrowser();	// Open a browser with the Google MapView  
    } // end Main Browser.java Activity method
    
@@ -41,14 +49,15 @@ public class Browser extends Activity implements LocationListener {
    
    /** Create webView and JavaScript Interface **/
    private void openBrowser(){
- 	  webView = (WebView) findViewById(R.id.web_view);		// Create webview and assign to web_view item
- 	  webView.getSettings().setJavaScriptEnabled(true);		// JavaScript is off by default, enabling JavaScript
- 	  webView.setWebViewClient(new WebViewClient());		// Create and set WebViewClient subclass for rendering
- 	  
+	  // Create webview and assign to web_view item
+ 	  webView = (WebView) findViewById(R.id.web_view);
+ 	  // JavaScript is off by default, enabling JavaScript
+ 	  webView.getSettings().setJavaScriptEnabled(true);
+ 	  // Create and set WebViewClient subclass for rendering
+ 	  webView.setWebViewClient(new WebViewClient());		
  	  // Add Java to JavaScript Interface and call it 'android' for access.
  	  webView.addJavascriptInterface(new JavaScriptInterface(), "android");
- 	  
- 	// Load bite.html page with webView
+ 	  // Load bite.html page with webView
  	  webView.loadUrl(getURL());							
    } // end Browser method
       
@@ -61,36 +70,46 @@ public class Browser extends Activity implements LocationListener {
    /** Retrieve current coordinates from GPS
     *  To save battery on the device the location update time has been increased. **/
    private void getLocation() {
+	    // Android GPS Manager
 	     locationManager =
-	      (LocationManager)getSystemService(Context.LOCATION_SERVICE);		// Android GPS Manager
-	    Criteria criteria = new Criteria();									// Application criteria for selection location provider
-	    criteria.setAccuracy(Criteria.ACCURACY_FINE);						// Set the accuracy requirement
-	    String provider = locationManager.getBestProvider(criteria,true); 	// Get location data from best source
-	    locationManager.requestLocationUpdates(provider, 15000, 1, this); 	// Get updates of current location
+	      (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+	    // Application criteria for selection location provider
+	    Criteria criteria = new Criteria();	
+	    // Set the accuracy requirement
+	    criteria.setAccuracy(Criteria.ACCURACY_FINE);
+	    // Get location data from best source
+	    String provider = locationManager.getBestProvider(criteria,true);
+	    // Get updates of current location
+	    locationManager.requestLocationUpdates(provider, 15000, 1, this);
+	    // Pass location data mostRecentLocation for JavaScript Interface
 	    mostRecentLocation = locationManager.getLastKnownLocation(provider);
    } // end getLocation method
    
    /** JavaScriptInterface variables **/
    private class JavaScriptInterface {
+	   // return latitude to the JavaScript requesting it
 	   public double getLatitude(){
 		   double test = 29.62170;
 	     return test;
-	     // return mostRecentLocation.getLatitude();
+	     //return mostRecentLocation.getLatitude();	
 	   }
+	   // return longitude to the JavaScript requesting it
 	   public double getLongitude(){
 		   double test1 = -82.370915;
 	     return test1;
-	    // return mostRecentLocation.getLongitude();
+	    //return mostRecentLocation.getLongitude();	
 	   }
+	   // return radius for Google Places API to the JavaScript requesting it
 	   public int getRadius(){
 		   int radius = 500;
-		   return radius;
+		   return radius;		
 	   }
+	   // returns Google Places API type to the JavaScript requesting it
 	   public String getType(){
 		   String type = "restaurant";
-		   return type;
+		   return type;		
 	   }
-	 } // end JavaScriptInterface method
+	 } // end JavaScriptInterface class
    
    /** Required methods when using LocationListener 
     *  Referenced from Android API				**/ 

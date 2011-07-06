@@ -1,3 +1,4 @@
+<!-- @author: Paul Welch -->
 <!-- Define the layout for the Tip Calculator Activity -->
 <ScrollView
    xmlns:android="http://schemas.android.com/apk/res/android"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!-- @author: Paul Welch -->
 <!-- Define the string variables for objects. -->
 <resources>
     <string name="app_name">Bite-Byte</string>
     <string name="main_title">Main Menu</string>
     <string name="tip_title">Tip Calculator</string>
-  	<string name="go_label">Find Restaurant</string>
+  	<string name="find_label">Find Restaurant</string>
   	<string name="tip_label">Tip Calculator</string>
     <string name="about_label">About</string>
     <string name="exit_label">Exit</string>

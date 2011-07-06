@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- @author: Paul Welch -->
 <!-- String array for tip_rate Spinner in tip.xml. -->
 <resources>
 <string-array name="percents">
