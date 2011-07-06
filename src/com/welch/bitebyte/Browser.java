@@ -57,6 +57,8 @@ public class Browser extends Activity implements LocationListener {
  	  webView.setWebViewClient(new WebViewClient());		
  	  // Add Java to JavaScript Interface and call it 'android' for access.
  	  webView.addJavascriptInterface(new JavaScriptInterface(), "android");
+ 	  // Wait for the page to load then send the location information
+ 	    webView.setWebViewClient(new WebViewClient()); 
  	  // Load bite.html page with webView
  	  webView.loadUrl(getURL());							
    } // end Browser method
@@ -89,19 +91,19 @@ public class Browser extends Activity implements LocationListener {
    private class JavaScriptInterface {
 	   // return latitude to the JavaScript requesting it
 	   public double getLatitude(){
-		   double test = 29.62170;
-	     return test;
-	     //return mostRecentLocation.getLatitude();	
+		   //double test = 29.62170;
+	     //return test;
+	     return mostRecentLocation.getLatitude();	
 	   }
 	   // return longitude to the JavaScript requesting it
 	   public double getLongitude(){
-		   double test1 = -82.370915;
-	     return test1;
-	    //return mostRecentLocation.getLongitude();	
+		 //  double test1 = -82.370915;
+	     //return test1;
+	    return mostRecentLocation.getLongitude();	
 	   }
 	   // return radius for Google Places API to the JavaScript requesting it
 	   public int getRadius(){
-		   int radius = 500;
+		   int radius = 5600;
 		   return radius;		
 	   }
 	   // returns Google Places API type to the JavaScript requesting it
