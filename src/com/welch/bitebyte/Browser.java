@@ -49,16 +49,18 @@ public class Browser extends Activity implements LocationListener {
    
    /** Create webView and JavaScript Interface **/
    private void openBrowser(){
-	  // Create webview and assign to web_view item
+	  // Create webView and assign to web_view item
  	  webView = (WebView) findViewById(R.id.web_view);
  	  // JavaScript is off by default, enabling JavaScript
  	  webView.getSettings().setJavaScriptEnabled(true);
+ 	  // Enable zoom controls if supported by hardware
+ 	  webView.getSettings().setBuiltInZoomControls(true);
  	  // Create and set WebViewClient subclass for rendering
  	  webView.setWebViewClient(new WebViewClient());		
  	  // Add Java to JavaScript Interface and call it 'android' for access.
  	  webView.addJavascriptInterface(new JavaScriptInterface(), "android");
  	  // Wait for the page to load then send the location information
- 	    webView.setWebViewClient(new WebViewClient()); 
+ 	  webView.setWebViewClient(new WebViewClient()); 
  	  // Load bite.html page with webView
  	  webView.loadUrl(getURL());							
    } // end Browser method
