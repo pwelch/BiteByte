@@ -93,19 +93,15 @@ public class Browser extends Activity implements LocationListener {
    private class JavaScriptInterface {
 	   // return latitude to the JavaScript requesting it
 	   public double getLatitude(){
-		   //double test = 29.62170;
-	     //return test;
-	     return mostRecentLocation.getLatitude();	
+		   return mostRecentLocation.getLatitude();	
 	   }
 	   // return longitude to the JavaScript requesting it
 	   public double getLongitude(){
-		 //  double test1 = -82.370915;
-	     //return test1;
-	    return mostRecentLocation.getLongitude();	
+		   return mostRecentLocation.getLongitude();	
 	   }
-	   // return radius for Google Places API to the JavaScript requesting it
+	   // return radius (in meters) for Google Places API to the JavaScript requesting it
 	   public int getRadius(){
-		   int radius = 5600;
+		   int radius = 1610;
 		   return radius;		
 	   }
 	   // returns Google Places API type to the JavaScript requesting it

@@ -13,7 +13,7 @@
     <string name="about_text">
     Bite-Byte is an application that finds restaurants based
     on the current location of the user which is obtained by using
-    the geocooridantes privded by the mobile GPS.
+    the GPS coordinates provided by the Android device and the Google Places JavaScript API.
     This program was written by Paul Welch to meet the requirements
     of CIS5080.
     pwelch2010@my.fit.edu
