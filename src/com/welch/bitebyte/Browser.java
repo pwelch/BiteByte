@@ -3,8 +3,8 @@ package com.welch.bitebyte;
 /**
  * Program: Browser.java
  * @author: Paul Welch
- * Purpose: This activity uses a webView and JavaScript Interface
- * to search for restaurants in an area within a 500m radius of GPS coordinates.
+ * This activity uses a webView and JavaScript Interface
+ * to search for restaurants in an area within a 1610m radius of GPS coordinates.
  * The GPS coordinates are passed to the Google API via a Java/JavaScript Interface.
  */
 
@@ -31,7 +31,7 @@ public class Browser extends Activity implements LocationListener {
       setContentView(R.layout.browser);
       getLocation();	// Get the current geocoordinates
       openBrowser();	// Open a browser with the Google MapView  
-   } // end Main Browser.java Activity method
+   } // end main activity method
    
    /** Called when Activity Resumes **/
    @Override
@@ -67,7 +67,7 @@ public class Browser extends Activity implements LocationListener {
       
    // Method to set/return URL for map page source
    private String getURL() {
-      final String url = "http://my.fit.edu/~pwelch2010/bite.html";
+      final String url = "file:///android_asset/bite.html";
 	  return url;
 	} // end getURL method
 
@@ -112,7 +112,7 @@ public class Browser extends Activity implements LocationListener {
 	 } // end JavaScriptInterface class
    
    /** Required methods when using LocationListener 
-    *  Referenced from Android API				**/ 
+    *  Referenced from Android API		**/ 
    @Override
    public void onProviderDisabled(String provider) {
    }

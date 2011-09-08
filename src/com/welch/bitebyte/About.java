@@ -3,7 +3,7 @@ package com.welch.bitebyte;
 /**
  * Program: About.java
  * @author: Paul Welch
- * Purpose: This activity is for the About Activity which displays the program information.
+ * This activity is for the About Activity which displays the program information.
  */
 
 import android.app.Activity;

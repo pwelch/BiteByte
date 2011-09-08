@@ -1,0 +1,112 @@
+<html>
+<!-- Program: bite.html -->
+<!-- @author: Paul Welch -->
+<!-- This webpage uses a JavaScript interface to access varibles on an Android device -->
+<!-- and request a list of locations from Google Places API. The webpage then displays them on an-->
+<!-- interactive map built by accessing the Google Maps API. The webpage is then displayed inside a  -->
+<!-- webView on the Android device. -->
+
+<!-- Meta tags for mobile browsers such as webView. -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="HandheldFriendly" content="True" />
+<head> 
+<title>Bite-Byte</title> 
+<!-- CSS for Google Maps results in webView. -->
+<style type="text/css">
+	#map {height: 600px; width:480px; } 
+</style>
+	<!-- Load Google Maps V3 JavaScript API with Places Library -->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&amp;libraries=places"></script> 
+	<!-- Begin Javascript -->
+	<script type="text/javascript">
+
+	// Global variables for Google Maps and Places API
+    	var map;
+    	var infowindow;
+    	var service;
+	
+	// Initialize Javascript
+    	function initialize() { 
+
+	// Local Variables for Google Places API 
+	var type = '';
+	var radius = '';
+	var latitude = '';
+	var longitude = '';
+	
+	 // JavaScript Interface variables
+	// Access the variables on the Android device.	
+	if (window.android) {
+	latitude = window.android.getLatitude();
+	longitude = window.android.getLongitude();
+	radius = window.android.getRadius();
+	type = window.android.getType();
+	}else{
+	alert("This file is designed to be run with the Android application Bite-Byte.")
+	}
+	
+	// Based on Google Maps and Places JavaScript API
+	// Request a list of items from Google Places
+	// and display them on the map.
+      var result = new google.maps.LatLng(latitude, longitude);
+      map = new google.maps.Map(document.getElementById('map'), {
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: result,
+        zoom: 15
+      });
+	// Request for Google Places API
+      var request = {
+        location: result, 
+        radius: radius,
+        types: [type]
+      };
+	// Add information to InfoWindow on Map.
+	// Based on Google Maps API Document
+      infowindow = new google.maps.InfoWindow();
+      service = new google.maps.places.PlacesService(map);
+      service.search(request, callback);
+    }
+
+	// Iterate over results returned and store them.
+	// Based on Google Maps and Places API Document.
+	// Added error catching if Google Placs API returns errors.
+    function callback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          var place = results[i];
+          createMarker(results[i]); 
+        }
+      } else {
+			// Error if zero place results is returned.
+			if (status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS){
+				result = "No Restaurants Found.";
+				alert(result);
+			} else {
+				// General error message to catch all other errors.
+				result = "There was an error processing your request. " + status;
+				alert(result);
+			}
+		}
+    }
+	// Standard Google Maps V3 API to create marker on the map.
+    function createMarker(place) {
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(placeLoc.lat(), placeLoc.lng())
+      });
+	// Google Maps API call for interactive map markers
+      google.maps.event.addListener(marker, 'click', function() {
+		// adding additional content to infowindow
+        infowindow.setContent(place.name + "<br/>" + place.vicinity + "<br/>");
+        infowindow.open(map, this);
+      });
+    }
+
+	</script> 
+	<!-- End JavaScript -->
+</head> 
+<body onload="initialize()"> 
+  <div id="map"></div>
+</body> 
+</html> 

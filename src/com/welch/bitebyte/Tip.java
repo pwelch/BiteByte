@@ -3,8 +3,7 @@ package com.welch.bitebyte;
 /**
  * Program: Tip.java
  * @author: Paul Welch
- * Purpose: This activity uses is a Tip Calculator so that a user 
- * can quickly calculate the tip when paying at a restaurant.
+ * This activity is a Tip Calculator
  */
 
 import android.app.Activity;
@@ -26,7 +25,7 @@ public class Tip extends Activity implements View.OnClickListener, OnItemSelecte
 	private TextView totalAmount;
 	private EditText billAmount;
 
-	/* The main for every activity. */
+	/** The main for activity. **/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -91,12 +90,14 @@ public class Tip extends Activity implements View.OnClickListener, OnItemSelecte
 	   totalAmount.setText(Double.toString(total));												
    } // end calculateTip method
 		
-	/** Round the Tip Total which is a double to 2 places **/
+	/** Round the Tip Total which is a double to 2 places. 
+	    This needs to be replaced with a more accurate way to display two decimal places.	
+	**/
 	private double roundAnswer(double answer) {
 	    return Math.round(answer * Math.pow(10, (double) 2)) / Math.pow(10,(double) 2);
 	} // end roundAnswer method
 	
-	/** Spinner Listeners. Referenced from Android API**/
+	/** Spinner Listeners. Referenced from Android API **/
 	public void onItemSelected(AdapterView<?> parent, View v, int position, long id){
 		parent.getItemAtPosition(position);
 	}
@@ -110,7 +111,7 @@ public class Tip extends Activity implements View.OnClickListener, OnItemSelecte
 	    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.percents, android.R.layout.simple_spinner_item);
 	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    percentSpinner.setAdapter(adapter);
-	 // Default to select element 1 from the spinner
+	 	// Default to select element 1 from the spinner
 	    percentSpinner.setSelection(1); 
 	} // end setAdapters method
 } // end Tip.java class/activity

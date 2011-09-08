@@ -1,11 +1,10 @@
 package com.welch.bitebyte;
 
 /**
- * Program: Bite-Byte.java
+ * Program: BiteByte.java
  * @author: Paul Welch
- * Purpose: This program uses GPS coordinates from a Android device
+ * This program uses GPS coordinates from a Android device
  * and Google APIs to show the location of restaurants in the area of a user. 
- * This application was built to meet the requirements of CIS5080 - Summer 2011.
  */
 
 import android.app.Activity;
