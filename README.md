@@ -8,12 +8,12 @@ This application was tested on an HTC EVO running Android 2.3.
  
 
 ## References
-[Android Developers Documentation] [http://developer.android.com/index.html]
+[Android Developers Documentation](http://developer.android.com/index.html)
 
-[Hello, Android by Ed Burnette] [http://pragprog.com/book/eband3/hello-android]
+[Hello, Android by Ed Burnette](http://pragprog.com/book/eband3/hello-android)
 
-[Android Developers - "Google Map View"][http://developer.android.com/resources/tutorials/views/hello-mapview.html]
+[Android Developers - "Google Map View"](http://developer.android.com/resources/tutorials/views/hello-mapview.html)
 
-[Google Code - "Google Maps JavaScript API V3"][http://code.google.com/apis/maps/documentation/javascript/]
+[Google Code - "Google Maps JavaScript API V3"](http://code.google.com/apis/maps/documentation/javascript/)
 
-[Google Code - "Google Places API"] [http://code.google.com/apis/maps/documentation/places/]
+[Google Code - "Google Places API"](http://code.google.com/apis/maps/documentation/places/)
